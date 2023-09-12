@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>    <style>
+        /* Additional Styles */
+        body {
+            background-color: white;
+        }
+        .form-container {
+            background-color: white;
+            color: #D000FF;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width:400px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        .btn-custom {
+            background-color: #D000FF;
+            border-color: #D000FF;
+        }
+        .label{
+            width: 200px;
+            margin-left: 40px;
+        }
+        .form-control{
+            text-align: center;
+            border-radius: 15px;
+        }
+        .btn{
+            color: white;
+            background-color:#D000FF ;
+            width: 200px;
+            border-radius: 15px;
+        }
+        body {
+            background-color: #ffffff;
+            color: #A9009E;
+        }
+
+        .form-control:focus {
+            border-color: #D000FF;
+            /* Change this color to your desired focus color */
+            box-shadow: 0 0 5px #D000FF;
+            /* Optional: Add a box shadow for focus effect */
+        }
+
+        .offcanvas-body ul li {
+            list-style: none;
+            margin-bottom: 3vw;
+        }
+
+        .offcanvas-body ul li a {
+            text-decoration: none;
+            color: #A9009E;
+            font-size: 1.5rem;
+        }
+
+        .footer-divs div ul {
+            list-style: none;
+            text-align: left;
+            padding: 0px;
+        }
+
+        .footer-divs div ul li {
+
+            margin: 2vw 0vw;
+
+        }
+
+        .footer-divs div ul li a {
+            text-decoration: none;
+            color: #A9009E;
+            font-size: 1.2rem;
+
+
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<center>
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh; width: 100vw;">
+
+
+        <div class="col col-sm-10 col-lg-4" style="  height: 80vh; background-color: rgb(255, 255, 255); border-radius:2vw; -webkit-box-shadow: 1px 4px 11px 3px rgba(0,0,0,0.38);
+-moz-box-shadow: 1px 4px 11px 3px rgba(0,0,0,0.38);
+box-shadow: 1px 4px 11px 3px rgba(0,0,0,0.38);">
+            <style>
+
+            </style>
+
+            <form>
+                <fieldset>
+
+                    <div class="mb-3">
+                        <h1 style="text-align: center; margin: 2vw;">Sign up</h1>
+                        <div class="container">
+
+
+                            <div class="container d-flex align-content-center justify-content-center mt-5 "
+                                style=" width: 100%;">
+
+                                <input type="email" id="disabledTextInput" class="form-control"
+                                    style="width: 100%; height: 50px; text-align: center; font-size: 20px;  border-radius: 17px;  "
+                                    placeholder="Enter email">
+                            </div>
+
+                            <div class="container d-flex align-content-center justify-content-center mt-5 "
+                                style=" width: 100%;">
+
+                                <input type="text" id="disabledTextInput" class="form-control"
+                                    style="width: 100%; height: 50px; text-align: center; font-size: 20px;  border-radius: 17px;  "
+                                    placeholder="User Name">
+                            </div>
+
+
+
+                            <div class="container d-flex align-content-center justify-content-center mt-5 "
+                                style=" width: 100%;">
+
+                                <input type="password" id="disabledTextInput" class="form-control"
+                                    style="width: 100%; height: 50px; text-align: center; font-size: 20px;  border-radius: 17px;  "
+                                    placeholder="Enter Password">
+                            </div>
+
+
+
+                            <div class="container d-flex align-content-center justify-content-center mt-5 "
+                                style=" width: 100%;">
+
+                                <button class="btn" type="submit"
+                                    style=" color: white; width: 100%; height: 50px; text-align: center; font-size: 20px;  border-radius: 17px;  background-color:#ce00c0;  ">Sign
+                                    in</button>
+                            </div>
+
+                            <div class="container d-flex align-content-center justify-content-center mt-3 "> <a
+                                href="/signin" style="text-decoration: none; text-align: center; font-size: 15px; color: #D000FF;">Already have an account!</a>
+                            </div>
+                           
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</center>
+
+<footer style="border: 2px solid #D000FF; -webkit-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+-moz-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23); background-color: #ffffff;
+">
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+      .btn{
+        background-color: #A9009E;
+        margin-top: 15rem;
+        color: white;
+        border-radius: 5px;
+      }
+      .btn2{
+        background-color: #A9009E;
+        color: white;
+        width: 25rem;
+        margin-left: 1.5rem;
+        border: none;
+        border-radius: 5px;
+        width: 250px;
+        margin-bottom: 10px;
+      }
+      .modal-title{
+        color:#A9009E ;
+        margin-left: 1.5rem;
+      }
+      
+      /* Style for the label container */
+      .radio-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Style for the text */
+        .radio-label-text {
+            flex: 1; /* Takes up remaining space */
+        }
+
+        /* Style for the radio button */
+        .radio-input {
+            margin-left: 10px;
+        }
+
+        .form-check{
+          box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.2);
+          width: 250px;
+          margin-left: 1.5rem;
+          border-radius: 5px;
+          margin-bottom: 30px;
+        }
+        input[type="radio"]:checked {
+            background-color: #A9009E; /* Change the dot color when selected */
+        }
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #A9009E; /* Change the border color */
+            border-radius: 50%; /* Make it a circle */
+            outline: none;
+            cursor: pointer;
+        }
+       .modal-dialog{
+            max-width: 300px; /* Adjust the width as needed */
+            border-radius: 10px;
+            border: none;
+            margin: auto;
+        }
+        .title{
+          font-size: 12px;
+          color:#A9009E ;
+        margin-left: 1.5rem;
+        }
+       
+        #img_1{
+          height: 2rem;
+          width: 2rem;
+          margin-top: 0.5rem;
+          margin-right: 1.5rem;
+        }
+       
+    </style>
+    
+</head>
+<body>
+    <!-- Button trigger modal -->
+    <center>
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  select payment mode
+</button>
+</center>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div  class="modal-dialog" style="align-content: center; " >
+    
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Pay</h5><br>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <h6 class="title" id="staticBackdropLabel">Mobile Number:-</h6>
+        <h6 class="title" id="staticBackdropLabel">Amount to be paid:-</h6><br>
+        <div class="form-check">
+          
+        <div class="radio-label">
+          <img src="./New folder/pay.png" id="img_1" alt="">
+            <span class="radio-label-text" >Paytm</span>
+            <input type="radio" class="radio-input" style="margin-right: 20px; " name="example" value="option1" >
+        </div>
+          
+        </div>
+        <div class="form-check" >
+          <div class="radio-label">
+            <img src="./New folder/pay3.png" id="img_1" alt="">
+            <span class="radio-label-text" >Googlepay</span>
+            <input type="radio" class="radio-input" style="margin-right: 20px;" name="example" value="option2">
+        </div>
+        </div>
+        <div class="form-check">
+          <div class="radio-label">
+            <img src="./New folder/pay2.png" id="img_1" alt="">
+            <span class="radio-label-text">Amazonpay</span>
+            <input type="radio" class="radio-input" style="margin-right: 20px;" name="example" value="option2">
+        </div>
+        </div>
+        <button type="button" class="btn2" data-bs-dismiss="modal">Cancle</button>
+        <button type="button" class="btn2">Pay</button>
+      
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

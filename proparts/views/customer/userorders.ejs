@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<!-- #D000FF -->
+<!-- #FF50F3 -->
+<!-- #A9009E -->
+
+<head>
+    <title>User Orders</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <style>
+        body {
+            background-color: rgb(228, 228, 228);
+            color: #A9009E;
+        }
+
+        .form-control:focus {
+            border-color: #D000FF;
+            /* Change this color to your desired focus color */
+            box-shadow: 0 0 5px #D000FF;
+            /* Optional: Add a box shadow for focus effect */
+        }
+
+        .offcanvas-body ul li {
+            list-style: none;
+            margin-bottom: 3vw;
+        }
+
+        .offcanvas-body ul li a {
+            text-decoration: none;
+            color: #A9009E;
+            font-size: 1.5rem;
+        }
+
+        .footer-divs div ul {
+            list-style: none;
+            text-align: left;
+            padding: 0px;
+        }
+
+        .footer-divs div ul li {
+
+            margin: 2vw 0vw;
+
+        }
+
+        .footer-divs div ul li a {
+            text-decoration: none;
+            color: #A9009E;
+            font-size: 1.2rem;
+
+
+        }
+
+        .footer-divs div {
+            /* margin-top: 5vw; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- As a link -->
+        <%- include('../partials/footer'); %>
+
+    </header>
+
+
+    <main>
+
+        <div class="container" style=" border: 2px solid #D000FF; margin-top: 100px; margin-bottom: 100px; padding: 0.5vw; background-color: white; border-radius: 2vw;  -webkit-box-shadow: 8px 11px 9px -4px rgba(0,0,0,0.42);
+        -moz-box-shadow: 8px 11px 9px -4px rgba(0,0,0,0.42);
+        box-shadow: 8px 11px 9px -4px rgba(0,0,0,0.42);" >
+        <h1 style="margin: 2vw 0vw 0vw 2vw " >My Orders</h1>
+            <div style="width: 100%; margin-top:30px; margin-bottom: 100px;">
+                <table class="table   table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">SNo.</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Price</th>
+                        <th scope="col">Product Qty.</th>
+                        <th scope="col">Order Date.</th>
+                        <th scope="col">Order Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                         <td>@mdo</td>
+                          <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                         <td>@mdo</td>
+                          <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                         <td>@mdo</td>
+                          <td>@mdo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+            </div>
+        </div>
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+    <footer style="border: 2px solid #D000FF; -webkit-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+    box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+    ">
+
+        <%- include('../partials/footer'); %>
+
+    </footer>
+
+</body>
+
+</html>

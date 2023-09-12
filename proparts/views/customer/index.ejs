@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello, world!</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Add these scripts to your HTML -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/owl.carousel.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <!-- custom css -->
+
+</head>
+
+<body>
+    <!-- === Header start ================================================================ -->
+    <header>
+        <%- include('../partials/customernav'); %>
+    </header>
+    <!-- === Header end ================================================================== -->
+    <!-- === search start ================================================================ -->
+    <main>
+        <div id="profile" class="container-fluid mt-5 p-3" style="width: 90%;">
+            <div class="pb-4 "
+                style="padding: 1vw; border-radius: 25px; box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.41);">
+                <div class="row p-3" align="center">
+                    <div class="col-md-6  mt-5" style="color: #D000ff;">
+                        <form>
+                            <input type="text" class="m-4 p-3 mb-5 mt-5" id="searchinput"
+                                placeholder="Search Parts     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#61442;"><br>
+                            <button class=" p-2 btn btn-color custom-btn ">Search</button>
+                        </form>
+                    </div>
+                    <div class="col-md-4 column " align="center">
+                        <img class="img rounded-circle" width="80%" src="" alt="proflie" id="searchimage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- === search end ================================================================== -->
+    <div class="container">
+        <div class="row my-5">
+            <h1 class="text-center">Featured Products</h1>
+            <p class="fw-light w-75 mx-auto text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cumque est neque facilis debitis, repellat dolorem.</p>
+        </div>
+
+        <div class="row g-4 my-5 mx-auto owl-carousel owl-theme">
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-1.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-2.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-3.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-4.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-5.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-6.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-7.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-8.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col product-item mx-auto">
+                <div class="product-img">
+                    <img src="images/product-9.jpg" alt="" class="img-fluid d-block mx-auto">
+                    <span class="heart-icon">
+                        <i class="far fa-heart"></i>
+                    </span>
+                    <div class="row btns w-100 mx-auto text-center">
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button type="button" class="col-6 py-2">
+                            <i class="fa fa-binoculars"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info p-3">
+                    <span class="product-type">Electronics & Accessories</span>
+                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
+                        Series 3 White Sports Band</a>
+                    <span class="product-price">$ 100.50</span>
+                    <div class="rating d-flex mt-1">
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span>(25 reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === Main content start ================================================================ -->
+
+    <div id="" class="container-fluid p-3" style="width: 90%;">
+        <div class="" style="padding: 1vw; border-radius: 25px; box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.41);">
+            <h1 class="ms-3 mt-3" style="color: #D000ff;">Search by vehical</h1>
+
+
+            <div class="row mt-5 mb-3" align="center">
+                <div class="col-md-6 col-sm-12" style="color: #D000ff;">
+                    <div class="h3" id="vehicaltext">Search By Number Plate</div>
+                </div>
+                <div class="col-md-6 col-sm-12" style="color: #D000ff;">
+                    <form class="col">
+                        <input type="text" class="p-2" placeholder=" DL 01 AA 1920" id="vehicalinput"></input>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row " align="center" style="color: #D000ff;">
+                <div class="dropdown col mt-2">
+                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Car Maker
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button">Another action</button></li>
+                        <li><button class="dropdown-item" type="button">Something else here</button></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown col mt-2">
+                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Model Line
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button">Another action</button></li>
+                        <li><button class="dropdown-item" type="button">Something else here</button></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown col mt-2">
+                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Year
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button">Another action</button></li>
+                        <li><button class="dropdown-item" type="button">Something else here</button></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown col mt-2">
+                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Modification
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button">Another action</button></li>
+                        <li><button class="dropdown-item" type="button">Something else here</button></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="d-grid d-block " width="" align="center">
+                <button class="btn btn-color btn-lg m-5">Search Parts</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--=== Start-Category ================================================ -->
+    <section>
+        <div class="container">
+            <p class="h1 fw-bolder" style="color:  #bd2b2b;">Search By Category</p>
+            <div class=" row ">
+                <div class="category col col-lg-3 col-md-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
+                    <img src="images/product-1.jpg" alt=""><br>
+                    Watch
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!--=== End-Category ================================================ -->
+    <!-- Start brands section -->
+
+    <div class="brand__section brand__section--style3 section--padding mt-5">
+        <div class="container">
+            <p class="h1 fw-bolder pb-5" style="color:  #bd2b2b;">Brands We Trust</p>
+
+            <div class="brand__section--inner__style3 d-flex justify-content-between align-items-center">
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo1.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo2.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo3.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo4.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo5.webp" alt="brand-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brand__section brand__section--style3 section--padding mb-5">
+        <div class="container">
+            <div class="brand__section--inner__style3 d-flex justify-content-between align-items-center">
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo1.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo2.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo3.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo4.webp" alt="brand-logo">
+                </div>
+                <div class="brang__logo--items">
+                    <img class="brang__logo--img" src="images/brand-logo5.webp" alt="brand-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End brand section -->
+    <!-- === Footer start ================================================================ -->
+    <footer style="border: 0px solid #D000FF; -webkit-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
+    box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23); background-color: #ffffff;
+    ">
+        <%- include('../partials/footer'); %>
+
+    </footer>
+    <!-- === Main content start ================================================================ -->
+
+    <!-- owl carousel -->
+    <script src="js/script.js"></script>
+
+</body>
+
+<script>
+    // Array of image URLs
+    const imageUrls = [
+        'images/engine-1.png',
+        'images/engine-2.png',
+        'images/engine-3.png'
+    ];
+
+    let currentIndex = 0;
+    const imageElement = document.getElementById('searchimage');
+
+    function changeImage() {
+        // Fade out the image
+        imageElement.style.opacity = 0;
+
+        setTimeout(() => {
+            // Update the image source with the next image URL
+            imageElement.src = imageUrls[currentIndex];
+
+            // Increment the index and loop back to the beginning if necessary
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+
+            // Fade in the new image
+            imageElement.style.opacity = 1;
+        }, 500); // Delay the image change to match the transition duration (0.5 seconds)
+    }
+
+    // Call the changeImage function every second (1000 milliseconds)
+    setInterval(changeImage, 3000);
+
+    // Initial image load
+    changeImage();
+</script>
+
+</html>
