@@ -6,20 +6,20 @@ router.get('/', (req, res) => {
     res.render('customer/index');
   });
 
+router.get('/index', (req, res) => {
+  res.render('customer/index');
+});
+
 router.get('/cart', (req, res) => {
   res.render('customer/cart');
 });
 
-router.get('/pro', (req, res) => {
-  res.render('customer/pro');
-});
+// router.get('/profile', (req, res) => {
+//   res.render('customer/profile');
+// });
 
-router.get('/orderReview', (req, res) => {
-  res.render('customer/addProduct');
-});
-
-router.get('/Products', (req, res) => {
-  res.render('customer/Products');
+router.get('/product', (req, res) => {
+  res.render('customer/product');
 });
 
 router.get('/signin', (req, res) => {
@@ -29,6 +29,15 @@ router.get('/signin', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('customer/signup');
 });
+
+router.get('/userorder', (req, res) => {
+  res.render('customer/userorder');
+});
+
+router.get('/shippingaddress', (req, res) => {
+  res.render('customer/shippingaddress');
+});
 // Add more routes as needed
 
 module.exports = router;
+

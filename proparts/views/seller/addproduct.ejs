@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-color: #590202;">
+    <%- include('../partials/sellerheader'); %>
+        <div class="container drop-shadow bg-white p-4 w-80">
+            <div class=" row  ">
+                <h1>Add New Product</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="product name">Product Name</label>
+                    <input class="form-control" type="text" name="product name" value=""
+                        placeholder="Enter Product Name">
+                </div>
+
+                <div class="col-12 col-md-6 col-margin">
+                    <label for="product price">Product Price</label>
+                    <input class="form-control" type="number" name="product price" value=""
+                        placeholder="Enter Product Price">
+                </div>
+
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Actual price">Actual Price</label>
+                    <input class="form-control" type="number" name="Actual price" value=""
+                        placeholder="Enter Actual Price">
+                </div>
+
+
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Quantity">Quantity</label>
+                    <input class="form-control" type="number" name="Quantity" value="" placeholder="Enter Quantity">
+                </div>
+
+
+
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Return Days">Return Days</label>
+                    <input class="form-control" type="number" name="Return Days" value=""
+                        placeholder="Enter Return Days">
+                </div>
+
+
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Catagory">Catagory</label>
+                    <select class="form-control" name="Catagory">
+                        <option value="option 1">Select Catagory</option>
+                        <option value="option 1">option 2</option>
+                        <option value="option 1">option 3</option>
+                        <option value="option 1">option 4</option>
+                        <option value="option 1">option 5</option>
+                    </select>
+                </div>
+
+
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Brand">Brand</label>
+                    <select class="form-control" name="Brand">
+                        <option value="option 1">Select Brand</option>
+                        <option value="option 1">option 2</option>
+                        <option value="option 1">option 3</option>
+                        <option value="option 1">option 4</option>
+                        <option value="option 1">option 5</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Description">Description</label>
+                    <textarea class="form-control" rows="1" cols="" placeholder="Description"></textarea>
+                </div>
+
+                <h4>Product Images</h4>
+                <div class="col-6 col-lg-3  d-flex justify-content-center col-margin">
+                    <img class="w-75" src="images/cat1.webp " alt="">
+                </div>
+
+                <div class="col-6 col-lg-3  d-flex justify-content-center col-margin">
+                    <img class="w-75" src="images/cat1.webp " alt="">
+                </div>
+
+                <div class="col-6 col-lg-3  d-flex justify-content-center col-margin">
+                    <img class="w-75" src="images/cat1.webp" alt="">
+                </div>
+
+                <div class="col-6 col-lg-3  d-flex justify-content-center col-margin">
+                    <img class="w-75" src="images/cat1.webp" alt="">
+                </div>
+
+
+                <div class="d-grid gap-2  mb-2" id="main-search-btn">
+                    <button type="button" name="" id="" class="btn text-white">Upload Images</button>
+                </div>
+
+                <div class="col-12 col-margin mb-3">
+                    <div class="row ">
+                        <div class="col-12  col-md-6 col-lg-2 ">
+                            <select class="form-control mt-2">
+                                <option value="option-1">Select Car Maker</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">Select Model Line</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="option-1">Select Year</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="option-1">Select Modifiction</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="option-1">Select Type</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="option-1">Select Part Catagory</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="oprion-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2" id="main-search-btn">
+                    <button type="button" name="" id="" class="btn text-white">Add this Product</button>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+        <%- include('../partials/footer'); %>
+
+</body>
+
+</html>

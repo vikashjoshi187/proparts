@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- ---------------------------Donut  Script-------------------------------------- -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Recent Orders', 11],
+                ['Cancelled Orders', 2],
+            ]);
+
+            var options = {
+                title: 'Sales By Category',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------ -->
+
+
+
+    <!-- ---------------------------------------------------Line Chart----------------------------------------------- -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses', "Profit"],
+                ['2004', 1000, 400, 600],
+                ['2005', 1170, 460, 710],
+                ['2006', 1200, 1120, -460],
+                ['2007', 1030, 540, 490]
+            ]);
+
+            var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------- -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-color: #590202; height: 100vh">
+    <%- include('../partials/adminheader'); %>
+    <main>
+
+        <div class="container bg-white p-4 drop-shadow" >
+            <div class="row">
+                 <div class="col-12" >
+                  <h1>Dashboard</h1>
+                </div>
+
+                <div class="col-12 col-sm-6 mt-3 col-md-4" >
+                    <h4>Total Customers 👤</h4>
+                    <h4>87997+</h4>
+                </div>
+
+
+                <div class="col-12 col-sm-6 mt-3 col-md-4" >
+                    <h4>Total Profit 🤑</h4>
+                    <h4>$87997</h4>
+                </div>
+
+
+                <div class="col-12 col-sm-6 mt-3 col-md-4" >
+                    <h4>Total Orders 📦</h4>
+                    <h4>87997+</h4>
+                </div>
+
+            </div>
+        </div>
+
+
+    <div class="container  p-4 drop-shadow bg-white">
+        <div class=" row  ">
+            <h1>Analytics&nbsp;🧐</h1>
+        </div>
+
+        <div class="row ">
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+                <div id="curve_chart" style="width: 100%; height: 400px"></div>
+            </div>
+
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+                <div id="donutchart" style="width: 100%; height: 400px; "></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container  p-4 drop-shadow bg-white">
+        <div class=" row  ">
+            <h1>Top Sellers⚡️</h1>
+        </div>
+
+        <div id="scrollable-div">
+            <table class="table table-danger table-striped">
+                <thead>
+                    <tr>
+                        <th>Seller ID</th>
+                        <th>Seller Name</th>
+                        <th>Seller Email</th>
+                        <th>Total Orders</th>
+                        <th>Total Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dummy data rows (20 rows) -->
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>50</td>
+                        <td>$10,000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>45</td>
+                        <td>$9,500</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Michael Johnson</td>
+                        <td>michael@example.com</td>
+                        <td>60</td>
+                        <td>$12,500</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Susan Williams</td>
+                        <td>susan@example.com</td>
+                        <td>35</td>
+                        <td>$7,200</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>David Brown</td>
+                        <td>david@example.com</td>
+                        <td>42</td>
+                        <td>$8,900</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Linda Taylor</td>
+                        <td>linda@example.com</td>
+                        <td>55</td>
+                        <td>$11,200</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Robert Davis</td>
+                        <td>robert@example.com</td>
+                        <td>48</td>
+                        <td>$9,800</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Mary Wilson</td>
+                        <td>mary@example.com</td>
+                        <td>63</td>
+                        <td>$13,500</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>William Clark</td>
+                        <td>william@example.com</td>
+                        <td>39</td>
+                        <td>$8,000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Karen Anderson</td>
+                        <td>karen@example.com</td>
+                        <td>58</td>
+                        <td>$11,900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+   </div>
+
+    </div>
+    </main>
+
+    <%- include('../partials/footer'); %>
+</body>
+
+</html>

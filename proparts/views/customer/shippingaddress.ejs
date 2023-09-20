@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body style="background-color: #590202; height: 400vh;">
+    <%- include('../partials/customerheader'); %>
+
+    <div class="container drop-shadow bg-white p-4 w-80">
+        <div class=" row  ">
+            <h1>Shipping Address</h1>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12 col-md-6  col-margin mb-2">
+                <label for="product name">Name</label>
+                <input class="form-control" type="text" name="product name" value="" placeholder="Enter Name">
+            </div>
+
+            <div class="col-12 col-md-6 col-margin mb-2">
+                <label for="product price">Last Name</label>
+                <input class="form-control" type="text" name="product price" value="" placeholder="Enter Last Name">
+            </div>
+
+
+            <div class="col-12 col-md-6  col-margin mb-2">
+                <label for="Return Days">Mobile</label>
+                
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">+91</span>
+                    <input class="form-control" type="number" name="product price" value="" placeholder="Enter Mobile Number">
+                </div>
+
+
+
+
+                <label for="Return Days">Pin Code</label>
+                <input class="form-control" type="number" name="Return Days" value="" placeholder="Enter Pin Code">
+                <label for="Return Days">State</label>
+                <select class="form-control">
+                    <option>Select City</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Jharkhnad">Jharkhnad</option>
+                    <option value="Gujrat">Gujrat</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6  col-margin mb-2">
+                <label for="Description">Address</label>
+                <textarea class="form-control" rows="6" cols="" placeholder="Enter Address"></textarea>
+            </div>
+
+            <div class="col-12 col-md-6 col-margin mb-2">
+                <label for="product price">City</label>
+                <select class="form-control">
+                    <option>Select City</option>
+                    <option value="indore">Indore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Agra">Agra</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6 col-margin mb-2">
+                <label for="product price">Country</label>
+                <select class="form-control">
+                    <option>Select Country</option>
+                    <option value="India">India</option>
+
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6 d-flex mb-2">
+
+                <div class="d-grid gap-2 w-100">
+                  <button type="button" name="" id="" class="btn btn-danger buyButton">Back</button>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 d-flex mb-2">
+                    <div class="d-grid gap-2 w-100">
+                    <button type="button" name="" id="" class="btn btn-danger buyButton">Next</button>
+                  </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <%- include('../partials/footer'); %>
+   
+</body>
+
+</html>
