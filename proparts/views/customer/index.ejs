@@ -2,676 +2,428 @@
 <html lang="en">
 
 <head>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <!-- Add these scripts to your HTML -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 
-    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="js/owl.carousel.js"></script>
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/owl.theme.default.css">
-    <link rel="stylesheet" href="/css/owl.carousel.css">
-    <!-- custom css -->
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
-<body>
-    <!-- === Header start ================================================================ -->
-    <header>
-        <%- include('../partials/customernav'); %>
-    </header>
-    <!-- === Header end ================================================================== -->
-    <!-- === search start ================================================================ -->
+<body style="background-color: #590202; height: 400vh;">
+    <%- include('../partials/customerheader'); %>
     <main>
-        <div id="profile" class="container-fluid mt-5 p-3" style="width: 90%;">
-            <div class="pb-4 "
-                style="padding: 1vw; border-radius: 25px; box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.41);">
-                <div class="row p-3" align="center">
-                    <div class="col-md-6  mt-5" style="color: #D000ff;">
-                        <form>
-                            <input type="text" class="m-4 p-3 mb-5 mt-5" id="searchinput"
-                                placeholder="Search Parts     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#61442;"><br>
-                            <button class=" p-2 btn btn-color custom-btn ">Search</button>
-                        </form>
+
+
+        <!-- -------------------------------SEARCH BOX-------------------------------------------------------------------------- -->
+        <div class="container drop-shadow bg-white">
+            <div class="row p-3 pb-5">
+                <div
+                    class="col-12 col-md-6 d-flex align-items-center justify-content-center order-last order-md-first ">
+                    <div class="w-75">
+                        <input class="form-control w-100 mt-2  " id="main-search-input" type="search" name="" value=""
+                            placeholder="SEARCH ">
+                        <button class="btn  w-100 mt-4 " id="main-search-btn" type="submit">SEARCH PART</button>
                     </div>
-                    <div class="col-md-4 column " align="center">
-                        <img class="img rounded-circle" width="80%" src="" alt="proflie" id="searchimage">
+                </div>
+
+                <div
+                    class=" order-xs-first col-12 col-md-6 d-flex justify-content-center align-items-center order-first order-md-last">
+                    <img src="images/ProParts.png" width="75%" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- -------------------------------SEARCH BOX ENDS--------------------------------------------------------- -->
+
+
+
+
+
+        <!-- -----------------------------------Carousel-------------------------------------------------- -->
+        <div class="container mt-3  drop-shadow bg-white pb-4">
+            <div class=" m-4 p-0 pt-4  d-flex align-items-center">
+                <h1 class="ms-4">Featured Products</h1>
+            </div>
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row pb-4">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card w-75 m-1 card-shadow">
+                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 1</h5>
+                                        <p class="card-text">Description for Product 1.</p>
+                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
+                                            <button class="btn btn-danger w-50 buyButton" type="submit">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card w-75 m-1 card-shadow">
+                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 2</h5>
+                                        <p class="card-text">Description for Product 2.</p>
+                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
+                                            <button class="btn btn-danger w-50 buyButton " type="submit">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card w-75 m-1 card-shadow">
+                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 3</h5>
+                                        <p class="card-text">Description for Product 3.</p>
+                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
+                                            <button class="btn btn-danger w-50 buyButton " type="submit">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row pb-4">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card w-75 m-1 card-shadow ">
+                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 1</h5>
+                                        <p class="card-text">Description for Product 1.</p>
+                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
+                                            <button class="btn btn-danger w-50 buyButton" type="submit">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card w-75 m-1 card-shadow ">
+                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 2</h5>
+                                        <p class="card-text">Description for Product 2.</p>
+                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
+                                            <button class="btn btn-danger w-50 buyButton" type="submit">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="card w-75 m-1 card-shadow ">
+                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 3</h5>
+                                        <p class="card-text">Description for Product 3.</p>
+                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
+                                            <button class="btn btn-danger w-50 buyButton " type="submit">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next " href="#myCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+        <!---------------------------------------------SEARCH BY Vehicle----------------------------------------------------------------? -->
+
+        <div class="container drop-shadow bg-white p-2">
+
+
+            <div class=" p-4 row">
+                <div class="col-12 col-md-5  bg-white">
+                    <div class="p-0  d-flex align-items-center">
+                        <h1>Search by Vehicle</h1>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-7    d-flex align-items-center">
+                    <div class="  p-0  d-flex align-items-center  w-100">
+
+                        <div class="row w-100">
+                            <div class="col-12 col-sm-6 p-0 d-flex align-items-center ">
+                                <h5>Search by Number Plate</h5>
+                            </div>
+
+                            <div class="col-12 col-sm-6 p-0 d-flex align-items-center">
+                                <input type="search" class="form-control" name="" value="" placeholder="MP.10MG.1828">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <div class="row ">
+                        <div class="col-12  col-md-6 col-lg-2 ">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">oprion-1</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">oprion-1</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">oprion-1</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">oprion-1</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">oprion-1</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2">
+                                <option value="oprion-1">oprion-1</option>
+                                <option value="oprion-2">oprion-2</option>
+                                <option value="oprion-3">oprion-3</option>
+                                <option value="oprion-4">oprion-4</option>
+                                <option value="oprion-5">oprion-5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="d-grid gap-2">
+                        <button id="main-search-btn" type="button" name="" id="" class="btn ">Search Vehicle</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!---------------------------------------------SEARCH BY Vehicle ENDS----------------------------------------------------------------? -->
+
+
+        <!-------------------------------------------------------------SEARCH BY CATEGORY-------------------------------------------------------------------- -->
+        <div class="container bg-white drop-shadow p-4 d-flex justify-content-center align-items-center">
+            <div>
+                <div class="row  w-110  ">
+                    <div class="col-6">
+                        <div class="ps-2 mb-3 d-flex align-items-center">
+                            <h1>Search by Category</h1>
+                        </div>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-end ">
+                        <p>
+                            <button class="btn " type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Load More
+                            </button>
+                        </p>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1 p-1">
+                            <img src="images/cat1.webp" width="100%" alt="">
+                            <center>Maintenance Service Parts</center>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                            <img src="images/prod8.webp" width="100%" alt="">
+                            <center>Air Conditioning</center>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                            <img src="images/prod8.webp" width="100%" alt="">
+                            <center>Air Conditioning</center>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                            <img src="images/prod9.png" width="100%" alt="">
+                            <center>Air Conditioning</center>
+                        </div>
+                    </div>
+
+
+                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                        <div class="card-shadow w-100 h-100 bg-white cata-box p-1">
+                            <img src="images/cat4.webp" width="100%" alt="">
+                            <center>Air Conditioning</center>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                            <img src="images/cat1.webp" width="100%" alt="">
+                            <center>Air Conditioning</center>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse w-100" id="collapseExample">
+                    <div class="row  w-110 ">
+                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                <img src="images/cat1.webp" width="100%" alt="">
+                                <center>Air Conditioning</center>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                <img src="images/cat4.webp" width="100%" alt="">
+                                <center>Air Conditioning</center>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                <img src="images/prod8.webp" width="100%" alt="">
+                                <center>Air Conditioning</center>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                <img src="images/prod9.png" width="100%" alt="">
+                                <center>Air Conditioning</center>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                <img src="images/cat4.webp" width="100%" alt="">
+                                <center>Air Conditioning</center>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                <img src="images/cat1.webp" width="100%" alt="">
+                                <center>Air Conditioning</center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------SEARCH BY CATEGORY ENDS-------------------------------------------------------------------- -->
+
+
+        <div class="container drop-shadow p-3  bg-white">
+            <div class="row w-100">
+                <div class="col-2 d-flex align-items-center">
+                    <img src="images/ProParts.png" width="125px" alt="">
+                    <div>
+
+                        <h1>ProParts</h1>
+                        <h6>"Driving Perfection"</h6>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row w-100 ">
+                <div class="col-12 col-md-6 ps-5 d-flex  order-last order-md-first ">
+                    <div class=" w-100">
+                        <h2>About us</h2>
+                        <p style="text-align: justify; line-height: 30px;">
+                            "Pro Parts: Ignite Your Drive with Precision Performance.
+                            Discover a vast selection of top-tier automobile auto parts to elevate your ride.
+                            We take pride in offering expertly engineered components for all makes and models,
+                            delivering uncompromising quality and reliability.
+                            Your destination for auto parts excellence awaits."
+                            Discover a vast selection of top-tier automobile auto parts to elevate your ride.
+                            We take pride in offering expertly engineered components for all makes and models,
+                            delivering uncompromising quality and reliability.
+                            Your destination for auto parts excellence awaits."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6   ps-4 d-flex justify-content-center order-first order-md-last ">
+                    <img src="images/Big_logo_white.png" alt="" width="60%">
+                </div>
+            </div>
+        </div>
+
     </main>
-    <!-- === search end ================================================================== -->
-    <div class="container">
-        <div class="row my-5">
-            <h1 class="text-center">Featured Products</h1>
-            <p class="fw-light w-75 mx-auto text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Cumque est neque facilis debitis, repellat dolorem.</p>
-        </div>
-
-        <div class="row g-4 my-5 mx-auto owl-carousel owl-theme">
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-1.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-2.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-3.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-4.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-5.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-6.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-7.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-8.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col product-item mx-auto">
-                <div class="product-img">
-                    <img src="images/product-9.jpg" alt="" class="img-fluid d-block mx-auto">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-                    <div class="row btns w-100 mx-auto text-center">
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-info p-3">
-                    <span class="product-type">Electronics & Accessories</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch
-                        Series 3 White Sports Band</a>
-                    <span class="product-price">$ 100.50</span>
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <span>(25 reviews)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- === Main content start ================================================================ -->
-
-    <div id="" class="container-fluid p-3" style="width: 90%;">
-        <div class="" style="padding: 1vw; border-radius: 25px; box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.41);">
-            <h1 class="ms-3 mt-3" style="color: #D000ff;">Search by vehical</h1>
-
-
-            <div class="row mt-5 mb-3" align="center">
-                <div class="col-md-6 col-sm-12" style="color: #D000ff;">
-                    <div class="h3" id="vehicaltext">Search By Number Plate</div>
-                </div>
-                <div class="col-md-6 col-sm-12" style="color: #D000ff;">
-                    <form class="col">
-                        <input type="text" class="p-2" placeholder=" DL 01 AA 1920" id="vehicalinput"></input>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row " align="center" style="color: #D000ff;">
-                <div class="dropdown col mt-2">
-                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Car Maker
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item" type="button">Action</button></li>
-                        <li><button class="dropdown-item" type="button">Another action</button></li>
-                        <li><button class="dropdown-item" type="button">Something else here</button></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown col mt-2">
-                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Model Line
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item" type="button">Action</button></li>
-                        <li><button class="dropdown-item" type="button">Another action</button></li>
-                        <li><button class="dropdown-item" type="button">Something else here</button></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown col mt-2">
-                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Year
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item" type="button">Action</button></li>
-                        <li><button class="dropdown-item" type="button">Another action</button></li>
-                        <li><button class="dropdown-item" type="button">Something else here</button></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown col mt-2">
-                    <button class="btn custom-dropdown dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Select Modification
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item" type="button">Action</button></li>
-                        <li><button class="dropdown-item" type="button">Another action</button></li>
-                        <li><button class="dropdown-item" type="button">Something else here</button></li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="d-grid d-block " width="" align="center">
-                <button class="btn btn-color btn-lg m-5">Search Parts</button>
-            </div>
-
-        </div>
-    </div>
-
-    <!--=== Start-Category ================================================ -->
-    <section>
-        <div class="container">
-            <p class="h1 fw-bolder" style="color:  #bd2b2b;">Search By Category</p>
-            <div class=" row ">
-                <div class="category col col-lg-3 col-md-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-                <div class="category col col-lg-3 col-sm-6 m-3 p-2">
-                    <img src="images/product-1.jpg" alt=""><br>
-                    Watch
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-
-    <!--=== End-Category ================================================ -->
-    <!-- Start brands section -->
-
-    <div class="brand__section brand__section--style3 section--padding mt-5">
-        <div class="container">
-            <p class="h1 fw-bolder pb-5" style="color:  #bd2b2b;">Brands We Trust</p>
-
-            <div class="brand__section--inner__style3 d-flex justify-content-between align-items-center">
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo1.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo2.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo3.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo4.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo5.webp" alt="brand-logo">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="brand__section brand__section--style3 section--padding mb-5">
-        <div class="container">
-            <div class="brand__section--inner__style3 d-flex justify-content-between align-items-center">
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo1.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo2.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo3.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo4.webp" alt="brand-logo">
-                </div>
-                <div class="brang__logo--items">
-                    <img class="brang__logo--img" src="images/brand-logo5.webp" alt="brand-logo">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End brand section -->
-    <!-- === Footer start ================================================================ -->
-    <footer style="border: 0px solid #D000FF; -webkit-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
-    -moz-box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23);
-    box-shadow: -2px -1px 9px 6px rgba(0,0,0,0.23); background-color: #ffffff;
-    ">
-        <%- include('../partials/footer'); %>
-
-    </footer>
-    <!-- === Main content start ================================================================ -->
-
-    <!-- owl carousel -->
-    <script src="js/script.js"></script>
+    <%- include('../partials/footer'); %>
 
 </body>
-
-<script>
-    // Array of image URLs
-    const imageUrls = [
-        'images/engine-1.png',
-        'images/engine-2.png',
-        'images/engine-3.png'
-    ];
-
-    let currentIndex = 0;
-    const imageElement = document.getElementById('searchimage');
-
-    function changeImage() {
-        // Fade out the image
-        imageElement.style.opacity = 0;
-
-        setTimeout(() => {
-            // Update the image source with the next image URL
-            imageElement.src = imageUrls[currentIndex];
-
-            // Increment the index and loop back to the beginning if necessary
-            currentIndex = (currentIndex + 1) % imageUrls.length;
-
-            // Fade in the new image
-            imageElement.style.opacity = 1;
-        }, 500); // Delay the image change to match the transition duration (0.5 seconds)
-    }
-
-    // Call the changeImage function every second (1000 milliseconds)
-    setInterval(changeImage, 3000);
-
-    // Initial image load
-    changeImage();
-</script>
 
 </html>
