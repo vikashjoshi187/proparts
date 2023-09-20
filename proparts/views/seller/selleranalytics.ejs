@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- ---------------------------Donut  Script-------------------------------------- -->
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Maintenance Service Parts', 11],
+                ['Air Conditioning', 2],
+                ['Belts Chains and Rollers', 2],
+                ['Bearings', 2],
+                ['Body', 7]
+            ]);
+
+            var options = {
+                title: 'Sales By Category',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------ -->
+
+
+
+    <!-- ---------------------------------------------------Line Chart----------------------------------------------- -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses', "Profit"],
+                ['2004', 1000, 400, 600],
+                ['2005', 1170, 460, 710],
+                ['2006', 1200, 1120, -460],
+                ['2007', 1030, 540, 490]
+            ]);
+
+            var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------- -->
+</head>
+
+<body style="background-color: #590202; height: 100vh">
+    <%- include('../partials/sellerheader'); %>
+
+    <div class="container  p-4 drop-shadow bg-white">
+        <div class=" row  ">
+            <h1>Seller Analytics</h1>
+        </div>
+
+        <div class="row ">
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+
+                <div id="donutchart" style="width: 100%; height: 400px; "></div>
+            </div>
+
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+                <div id="curve_chart" style="width: 100%; height: 400px"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container bg-white p-4 drop-shadow">
+        <div class=" row  ">
+            <h1>Top 6 Products</h1>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                <div>
+                    <img src="images/cat1.webp" width="80%" alt="">
+                    <h5 class="ms-3">Front Bumper</h5>
+                    <h6 class="ms-3">Total Units Sold:-2000</h6>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                <div>
+                    <img src="images/cat4.webp" width="80%" alt="">
+                    <h5 class="ms-3">Front Bumper</h5>
+                    <h6 class="ms-3">Total Units Sold:-2000</h6>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                <div>
+                    <img src="images/cat5.webp" width="80%" alt="">
+                    <h5 class="ms-3">Front Bumper</h5>
+                    <h6 class="ms-3">Total Units Sold:-2000</h6>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                <div>
+                    <img src="images/prod8.webp" width="80%" alt="">
+                    <h5 class="ms-3">Front Bumper</h5>
+                    <h6 class="ms-3">Total Units Sold:-2000</h6>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                <div>
+                    <img src="images/prod9.png" width="80%" alt="">
+                    <h5 class="ms-3">Front Bumper</h5>
+                    <h6 class="ms-3">Total Units Sold:-2000</h6>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                <div>
+                    <img src="images/cat1.webp" width="80%" alt="">
+                    <h5 class="ms-3">Front Bumper</h5>
+                    <h6 class="ms-3">Total Units Sold:-2000</h6>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <%- include('../partials/footer'); %>
+
+
+</body>
+
+</html>
