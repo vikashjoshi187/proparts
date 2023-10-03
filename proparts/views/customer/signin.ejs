@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="JS/script.js"></script>
 </head>
 
 <body style="background-color: #590202;">
@@ -42,10 +42,10 @@
          <div class=" container drop-shadow bg-white col-11 col-sm-7 col-md-6 col-lg-4 p-4 d-flex align-items-center justify-content-center" >
                 <div class=" w-100" >
                     <h1 class="h1 text-center">Sign In</h1>
-                    <input class="form-control form-field mt-5 mb-1"required type="email" name="" value="" placeholder="Email">
-                    <input class="form-control form-field mt-5 mb-1"required type="password" name="" value="" placeholder="Password">
+                    <input class="form-control form-field mt-5 mb-1" required type="email" id="signInEmail" name="" value="" placeholder="Email">
+                    <input class="form-control form-field mt-5 mb-1" required type="password" id="signInPassword" name="" value="" placeholder="Password">
                     <div class="d-grid gap-1">
-                  <button class="  mt-5 mb-1" id="main-search-btn" type="button" name="" id="" class="btn">Button</button>
+                  <button class="  mt-5 mb-1" id="main-search-btn" type="button" onclick="signInValidation(event)" name="" id="" class="btn">Button</button>
                 </div>
                 <br><br>
                 <a class="nav-link text-center" href="###">Not a member? Create Account</a>

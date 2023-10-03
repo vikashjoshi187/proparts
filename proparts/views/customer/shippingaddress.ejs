@@ -29,6 +29,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="JS/script.js"></script>
 
 </head>
 
@@ -44,29 +45,26 @@
 
             <div class="col-12 col-md-6  col-margin mb-2">
                 <label for="product name">Name</label>
-                <input class="form-control" type="text" name="product name" value="" placeholder="Enter Name">
+                <input class="form-control" type="text" name="product name" id="shippingName" value="" placeholder="Enter Name">
             </div>
 
             <div class="col-12 col-md-6 col-margin mb-2">
                 <label for="product price">Last Name</label>
-                <input class="form-control" type="text" name="product price" value="" placeholder="Enter Last Name">
+                <input class="form-control" type="text" name="product price" id="shippingPrice" value="" placeholder="Enter Last Name">
             </div>
-
 
             <div class="col-12 col-md-6  col-margin mb-2">
                 <label for="Return Days">Mobile</label>
                 
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">+91</span>
-                    <input class="form-control" type="number" name="product price" value="" placeholder="Enter Mobile Number">
+                    <input class="form-control" type="number" name="product price" id="shippingMobile" value="" placeholder="Enter Mobile Number">
                 </div>
 
-
-
-
                 <label for="Return Days">Pin Code</label>
-                <input class="form-control" type="number" name="Return Days" value="" placeholder="Enter Pin Code">
+                <input class="form-control" type="number" id="shippingPin" name="Return Days" value="" placeholder="Enter Pin Code">
                 <label for="Return Days">State</label>
+
                 <select class="form-control">
                     <option>Select City</option>
                     <option value="Madhya Pradesh">Madhya Pradesh</option>
@@ -78,7 +76,7 @@
 
             <div class="col-12 col-md-6  col-margin mb-2">
                 <label for="Description">Address</label>
-                <textarea class="form-control" rows="6" cols="" placeholder="Enter Address"></textarea>
+                <textarea class="form-control" rows="6" cols="" id="shippingAddress" placeholder="Enter Address"></textarea>
             </div>
 
             <div class="col-12 col-md-6 col-margin mb-2">
@@ -110,7 +108,7 @@
             </div>
             <div class="col-12 col-md-6 d-flex mb-2">
                     <div class="d-grid gap-2 w-100">
-                    <button type="button" name="" id="" class="btn btn-danger buyButton">Next</button>
+                    <button type="button" name="" id="" onclick="shippingValidation(event)" class="btn btn-danger buyButton">Next</button>
                   </div>
             </div>
 
