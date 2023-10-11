@@ -39,9 +39,9 @@
 
         <main>
 
-            <form action="/register" method="post" id="signupform">
+            <form action="/sellerregister" method="post" id="signupform">
                 <div class=" row d-flex align-items-center justify-content-center m-0"
-                    style="width: 100vw; height: 100vh;">
+                    style="width: 100vw; height: auto;">
                     <div
                         class=" container drop-shadow bg-white col-11 col-sm-7 col-md-6 col-lg-4 p-4 d-flex align-items-center justify-content-center">
                         <div class=" w-100">
@@ -58,6 +58,21 @@
                                 name="password" value="" placeholder="Password">
                             <span class="" id="passwordwarning" style="color: red;"></span>
 
+                            <input class="form-control form-field mt-3 " required type="text" id="phone"
+                                name="phone" value="" placeholder="Phone.no">
+                            <span class="" id="phonewarning" style="color: red;"></span>
+
+                            <input class="form-control form-field mt-3 " required type="text" id="gst_number"
+                                name="gst_number" value="" placeholder="GST Number">
+                            <span class="" id="gstdwarning" style="color: red;"></span>
+
+                            <input class="form-control form-field mt-3 " required type="text" id="upi_id"
+                                name="upi_id" value="" placeholder="UPI Id">
+                            <span class="" id="upiwarning" style="color: red;"></span>
+
+                            <input class="form-control form-field mt-3 " required type="text" id="pan_number"
+                                name="pan_number" value="" placeholder="PAN Number">
+                            <span class="" id="panwarning" style="color: red;"></span>
                             <div class="d-grid gap-1">
                                 <button class="mt-3" id="main-search-btn" type="submit" id="submit"
                                     class="btn">Button</button>

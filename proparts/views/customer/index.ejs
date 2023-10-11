@@ -36,393 +36,438 @@
 </head>
 
 <body style="background-color: #590202; height: 400vh;">
-    <%- include('../partials/customerheader'); %>
-    <main>
+
+    <% if(user.role=="customer" ){ %>
+        <%- include('../partials/customernav'); %>
+    <% }else if(user.role=="admin" ){ %>
+        <%- include('../partials/adminnav'); %>
+    <% }else if(user.role=="seller" ){%>
+        <%- include('../partials/sellernav'); %>
+    <% }else{%>
+        <%- include('../partials/navbar'); %>
+    <% } %>
+                        <main>
 
 
-        <!-- -------------------------------SEARCH BOX-------------------------------------------------------------------------- -->
-        <div class="container drop-shadow bg-white">
-            <div class="row p-3 pb-5">
-                <div
-                    class="col-12 col-md-6 d-flex align-items-center justify-content-center order-last order-md-first ">
-                    <div class="w-75">
-                        <input class="form-control w-100 mt-2  " id="main-search-input" type="search" name="" value=""
-                            placeholder="SEARCH ">
-                        <button class="btn  w-100 mt-4 " id="main-search-btn" type="submit">SEARCH PART</button>
-                    </div>
-                </div>
+                            <!-- -------------------------------SEARCH BOX-------------------------------------------------------------------------- -->
+                            <div class="container drop-shadow bg-white">
+                                <div class="row p-3 pb-5">
+                                    <div
+                                        class="col-12 col-md-6 d-flex align-items-center justify-content-center order-last order-md-first ">
+                                        <div class="w-75">
+                                            <input class="form-control w-100 mt-2  " id="main-search-input"
+                                                type="search" name="" value="" placeholder="SEARCH ">
+                                            <button class="btn  w-100 mt-4 " id="main-search-btn" type="submit">SEARCH
+                                                PART</button>
+                                        </div>
+                                    </div>
 
-                <div
-                    class=" order-xs-first col-12 col-md-6 d-flex justify-content-center align-items-center order-first order-md-last">
-                    <img src="images/ProParts.png" width="75%" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- -------------------------------SEARCH BOX ENDS--------------------------------------------------------- -->
-
-
-
+                                    <div
+                                        class=" order-xs-first col-12 col-md-6 d-flex justify-content-center align-items-center order-first order-md-last">
+                                        <img src="images/ProParts.png" width="75%" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -------------------------------SEARCH BOX ENDS--------------------------------------------------------- -->
 
 
-        <!-- -----------------------------------Carousel-------------------------------------------------- -->
-        <div class="container mt-3  drop-shadow bg-white pb-4">
-            <div class=" m-4 p-0 pt-4  d-flex align-items-center">
-                <h1 class="ms-4">Featured Products</h1>
-            </div>
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-                </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row pb-4">
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card w-75 m-1 card-shadow">
-                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Product 1</h5>
-                                        <p class="card-text">Description for Product 1.</p>
-                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
-                                            <button class="btn btn-danger w-50 buyButton" type="submit">Buy</button>
+
+
+                            <!-- -----------------------------------Carousel-------------------------------------------------- -->
+                            <div class="container mt-3  drop-shadow bg-white pb-4">
+                                <div class=" m-4 p-0 pt-4  d-flex align-items-center">
+                                    <h1 class="ms-4">Featured Products</h1>
+                                </div>
+                                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row pb-4">
+                                                <div class="col-md-4 d-flex justify-content-center">
+                                                    <div class="card w-75 m-1 card-shadow">
+                                                        <img src="images/img4.jpg" class="card-img-top" alt="Image 1">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Product 1</h5>
+                                                            <p class="card-text">Description for Product 1.</p>
+                                                            <div
+                                                                class="w-100 d-flex  align-items-center justify-content-center ">
+                                                                <button class="btn btn-danger w-50 buyButton"
+                                                                    type="submit">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex justify-content-center">
+                                                    <div class="card w-75 m-1 card-shadow">
+                                                        <img src="images/img4.jpg" class="card-img-top" alt="Image 2">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Product 2</h5>
+                                                            <p class="card-text">Description for Product 2.</p>
+                                                            <div
+                                                                class="w-100 d-flex  align-items-center justify-content-center ">
+                                                                <button class="btn btn-danger w-50 buyButton "
+                                                                    type="submit">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex justify-content-center">
+                                                    <div class="card w-75 m-1 card-shadow">
+                                                        <img src="images/img4.jpg" class="card-img-top" alt="Image 3">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Product 3</h5>
+                                                            <p class="card-text">Description for Product 3.</p>
+                                                            <div
+                                                                class="w-100 d-flex  align-items-center justify-content-center ">
+                                                                <button class="btn btn-danger w-50 buyButton "
+                                                                    type="submit">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row pb-4">
+                                                <div class="col-md-4 d-flex justify-content-center">
+                                                    <div class="card w-75 m-1 card-shadow ">
+                                                        <img src="images/img4.jpg" class="card-img-top" alt="Image 1">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Product 1</h5>
+                                                            <p class="card-text">Description for Product 1.</p>
+                                                            <div
+                                                                class="w-100 d-flex  align-items-center justify-content-center ">
+                                                                <button class="btn btn-danger w-50 buyButton"
+                                                                    type="submit">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex justify-content-center">
+                                                    <div class="card w-75 m-1 card-shadow ">
+                                                        <img src="images/img4.jpg" class="card-img-top" alt="Image 2">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Product 2</h5>
+                                                            <p class="card-text">Description for Product 2.</p>
+                                                            <div
+                                                                class="w-100 d-flex  align-items-center justify-content-center ">
+                                                                <button class="btn btn-danger w-50 buyButton"
+                                                                    type="submit">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex justify-content-center">
+                                                    <div class="card w-75 m-1 card-shadow ">
+                                                        <img src="images/img4.jpg" class="card-img-top" alt="Image 3">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Product 3</h5>
+                                                            <p class="card-text">Description for Product 3.</p>
+                                                            <div
+                                                                class="w-100 d-flex  align-items-center justify-content-center ">
+                                                                <button class="btn btn-danger w-50 buyButton "
+                                                                    type="submit">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left and right controls -->
+                                    <a class="carousel-control-prev" href="#myCarousel" role="button"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next " href="#myCarousel" role="button"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+                            <!---------------------------------------------SEARCH BY Vehicle----------------------------------------------------------------? -->
+
+                            <div class="container drop-shadow bg-white p-2">
+
+
+                                <div class=" p-4 row">
+                                    <div class="col-12 col-md-5  bg-white">
+                                        <div class="p-0  d-flex align-items-center">
+                                            <h1>Search by Vehicle</h1>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 col-md-7    d-flex align-items-center">
+                                        <div class="  p-0  d-flex align-items-center  w-100">
+
+                                            <div class="row w-100">
+                                                <div class="col-12 col-sm-6 p-0 d-flex align-items-center ">
+                                                    <h5>Search by Number Plate</h5>
+                                                </div>
+
+                                                <div class="col-12 col-sm-6 p-0 d-flex align-items-center">
+                                                    <input type="search" class="form-control" name="" value=""
+                                                        placeholder="MP.10MG.1828">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <div class="row ">
+                                            <div class="col-12  col-md-6 col-lg-2 ">
+                                                <select class="form-control mt-2">
+                                                    <option value="oprion-1">oprion-1</option>
+                                                    <option value="oprion-2">oprion-2</option>
+                                                    <option value="oprion-3">oprion-3</option>
+                                                    <option value="oprion-4">oprion-4</option>
+                                                    <option value="oprion-5">oprion-5</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12  col-md-6 col-lg-2">
+                                                <select class="form-control mt-2">
+                                                    <option value="oprion-1">oprion-1</option>
+                                                    <option value="oprion-2">oprion-2</option>
+                                                    <option value="oprion-3">oprion-3</option>
+                                                    <option value="oprion-4">oprion-4</option>
+                                                    <option value="oprion-5">oprion-5</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12  col-md-6 col-lg-2">
+                                                <select class="form-control mt-2">
+                                                    <option value="oprion-1">oprion-1</option>
+                                                    <option value="oprion-2">oprion-2</option>
+                                                    <option value="oprion-3">oprion-3</option>
+                                                    <option value="oprion-4">oprion-4</option>
+                                                    <option value="oprion-5">oprion-5</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12  col-md-6 col-lg-2">
+                                                <select class="form-control mt-2">
+                                                    <option value="oprion-1">oprion-1</option>
+                                                    <option value="oprion-2">oprion-2</option>
+                                                    <option value="oprion-3">oprion-3</option>
+                                                    <option value="oprion-4">oprion-4</option>
+                                                    <option value="oprion-5">oprion-5</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12  col-md-6 col-lg-2">
+                                                <select class="form-control mt-2">
+                                                    <option value="oprion-1">oprion-1</option>
+                                                    <option value="oprion-2">oprion-2</option>
+                                                    <option value="oprion-3">oprion-3</option>
+                                                    <option value="oprion-4">oprion-4</option>
+                                                    <option value="oprion-5">oprion-5</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12  col-md-6 col-lg-2">
+                                                <select class="form-control mt-2">
+                                                    <option value="oprion-1">oprion-1</option>
+                                                    <option value="oprion-2">oprion-2</option>
+                                                    <option value="oprion-3">oprion-3</option>
+                                                    <option value="oprion-4">oprion-4</option>
+                                                    <option value="oprion-5">oprion-5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="d-grid gap-2">
+                                            <button id="main-search-btn" type="button" name="" id="" class="btn ">Search
+                                                Vehicle</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card w-75 m-1 card-shadow">
-                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Product 2</h5>
-                                        <p class="card-text">Description for Product 2.</p>
-                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
-                                            <button class="btn btn-danger w-50 buyButton " type="submit">Buy</button>
+                            <!---------------------------------------------SEARCH BY Vehicle ENDS----------------------------------------------------------------? -->
+
+
+                            <!-------------------------------------------------------------SEARCH BY CATEGORY-------------------------------------------------------------------- -->
+                            <div
+                                class="container bg-white drop-shadow p-4 d-flex justify-content-center align-items-center">
+                                <div>
+                                    <div class="row  w-110  ">
+                                        <div class="col-6">
+                                            <div class="ps-2 mb-3 d-flex align-items-center">
+                                                <h1>Search by Category</h1>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6 d-flex justify-content-end ">
+                                            <p>
+                                                <button class="btn " type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseExample" aria-expanded="false"
+                                                    aria-controls="collapseExample">
+                                                    Load More
+                                                </button>
+                                            </p>
+                                        </div>
+
+                                        <div
+                                            class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1 p-1">
+                                                <img src="images/cat1.webp" width="100%" alt="">
+                                                <center>Maintenance Service Parts</center>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                <img src="images/prod8.webp" width="100%" alt="">
+                                                <center>Air Conditioning</center>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                <img src="images/prod8.webp" width="100%" alt="">
+                                                <center>Air Conditioning</center>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                <img src="images/prod9.png" width="100%" alt="">
+                                                <center>Air Conditioning</center>
+                                            </div>
+                                        </div>
+
+
+                                        <div
+                                            class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                            <div class="card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                <img src="images/cat4.webp" width="100%" alt="">
+                                                <center>Air Conditioning</center>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                <img src="images/cat1.webp" width="100%" alt="">
+                                                <center>Air Conditioning</center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="collapse w-100" id="collapseExample">
+                                        <div class="row  w-110 ">
+                                            <div
+                                                class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                                <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                    <img src="images/cat1.webp" width="100%" alt="">
+                                                    <center>Air Conditioning</center>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                                <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                    <img src="images/cat4.webp" width="100%" alt="">
+                                                    <center>Air Conditioning</center>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                                <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                    <img src="images/prod8.webp" width="100%" alt="">
+                                                    <center>Air Conditioning</center>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                                <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                    <img src="images/prod9.png" width="100%" alt="">
+                                                    <center>Air Conditioning</center>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                                <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                    <img src="images/cat4.webp" width="100%" alt="">
+                                                    <center>Air Conditioning</center>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
+                                                <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
+                                                    <img src="images/cat1.webp" width="100%" alt="">
+                                                    <center>Air Conditioning</center>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card w-75 m-1 card-shadow">
-                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Product 3</h5>
-                                        <p class="card-text">Description for Product 3.</p>
-                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
-                                            <button class="btn btn-danger w-50 buyButton " type="submit">Buy</button>
+                            <!-------------------------------------------------------------SEARCH BY CATEGORY ENDS-------------------------------------------------------------------- -->
+
+
+                            <div class="container drop-shadow p-3  bg-white">
+                                <div class="row w-100">
+                                    <div class="col-2 d-flex align-items-center">
+                                        <img src="images/ProParts.png" width="125px" alt="">
+                                        <div>
+
+                                            <h1>ProParts</h1>
+                                            <h6>"Driving Perfection"</h6>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row pb-4">
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card w-75 m-1 card-shadow ">
-                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Product 1</h5>
-                                        <p class="card-text">Description for Product 1.</p>
-                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
-                                            <button class="btn btn-danger w-50 buyButton" type="submit">Buy</button>
+
+
+                                <div class="row w-100 ">
+                                    <div class="col-12 col-md-6 ps-5 d-flex  order-last order-md-first ">
+                                        <div class=" w-100">
+                                            <h2>About us</h2>
+                                            <p style="text-align: justify; line-height: 30px;">
+                                                "Pro Parts: Ignite Your Drive with Precision Performance.
+                                                Discover a vast selection of top-tier automobile auto parts to elevate
+                                                your ride.
+                                                We take pride in offering expertly engineered components for all makes
+                                                and models,
+                                                delivering uncompromising quality and reliability.
+                                                Your destination for auto parts excellence awaits."
+                                                Discover a vast selection of top-tier automobile auto parts to elevate
+                                                your ride.
+                                                We take pride in offering expertly engineered components for all makes
+                                                and models,
+                                                delivering uncompromising quality and reliability.
+                                                Your destination for auto parts excellence awaits."
+                                            </p>
                                         </div>
+                                    </div>
+
+                                    <div
+                                        class="col-12 col-md-6   ps-4 d-flex justify-content-center order-first order-md-last ">
+                                        <img src="images/Big_logo_white.png" alt="" width="60%">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card w-75 m-1 card-shadow ">
-                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Product 2</h5>
-                                        <p class="card-text">Description for Product 2.</p>
-                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
-                                            <button class="btn btn-danger w-50 buyButton" type="submit">Buy</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div class="card w-75 m-1 card-shadow ">
-                                    <img src="images/img4.jpg" class="card-img-top" alt="Image 3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Product 3</h5>
-                                        <p class="card-text">Description for Product 3.</p>
-                                        <div class="w-100 d-flex  align-items-center justify-content-center ">
-                                            <button class="btn btn-danger w-50 buyButton " type="submit">Buy</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next " href="#myCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
-            </div>
-        </div>
-        <!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
 
-        <!---------------------------------------------SEARCH BY Vehicle----------------------------------------------------------------? -->
-
-        <div class="container drop-shadow bg-white p-2">
-
-
-            <div class=" p-4 row">
-                <div class="col-12 col-md-5  bg-white">
-                    <div class="p-0  d-flex align-items-center">
-                        <h1>Search by Vehicle</h1>
-                    </div>
-                </div>
-
-
-                <div class="col-12 col-md-7    d-flex align-items-center">
-                    <div class="  p-0  d-flex align-items-center  w-100">
-
-                        <div class="row w-100">
-                            <div class="col-12 col-sm-6 p-0 d-flex align-items-center ">
-                                <h5>Search by Number Plate</h5>
-                            </div>
-
-                            <div class="col-12 col-sm-6 p-0 d-flex align-items-center">
-                                <input type="search" class="form-control" name="" value="" placeholder="MP.10MG.1828">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 mt-4">
-                    <div class="row ">
-                        <div class="col-12  col-md-6 col-lg-2 ">
-                            <select class="form-control mt-2">
-                                <option value="oprion-1">oprion-1</option>
-                                <option value="oprion-2">oprion-2</option>
-                                <option value="oprion-3">oprion-3</option>
-                                <option value="oprion-4">oprion-4</option>
-                                <option value="oprion-5">oprion-5</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
-                                <option value="oprion-1">oprion-1</option>
-                                <option value="oprion-2">oprion-2</option>
-                                <option value="oprion-3">oprion-3</option>
-                                <option value="oprion-4">oprion-4</option>
-                                <option value="oprion-5">oprion-5</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
-                                <option value="oprion-1">oprion-1</option>
-                                <option value="oprion-2">oprion-2</option>
-                                <option value="oprion-3">oprion-3</option>
-                                <option value="oprion-4">oprion-4</option>
-                                <option value="oprion-5">oprion-5</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
-                                <option value="oprion-1">oprion-1</option>
-                                <option value="oprion-2">oprion-2</option>
-                                <option value="oprion-3">oprion-3</option>
-                                <option value="oprion-4">oprion-4</option>
-                                <option value="oprion-5">oprion-5</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
-                                <option value="oprion-1">oprion-1</option>
-                                <option value="oprion-2">oprion-2</option>
-                                <option value="oprion-3">oprion-3</option>
-                                <option value="oprion-4">oprion-4</option>
-                                <option value="oprion-5">oprion-5</option>
-                            </select>
-                        </div>
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
-                                <option value="oprion-1">oprion-1</option>
-                                <option value="oprion-2">oprion-2</option>
-                                <option value="oprion-3">oprion-3</option>
-                                <option value="oprion-4">oprion-4</option>
-                                <option value="oprion-5">oprion-5</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-4">
-                    <div class="d-grid gap-2">
-                        <button id="main-search-btn" type="button" name="" id="" class="btn ">Search Vehicle</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!---------------------------------------------SEARCH BY Vehicle ENDS----------------------------------------------------------------? -->
-
-
-        <!-------------------------------------------------------------SEARCH BY CATEGORY-------------------------------------------------------------------- -->
-        <div class="container bg-white drop-shadow p-4 d-flex justify-content-center align-items-center">
-            <div>
-                <div class="row  w-110  ">
-                    <div class="col-6">
-                        <div class="ps-2 mb-3 d-flex align-items-center">
-                            <h1>Search by Category</h1>
-                        </div>
-                    </div>
-
-                    <div class="col-6 d-flex justify-content-end ">
-                        <p>
-                            <button class="btn " type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Load More
-                            </button>
-                        </p>
-                    </div>
-
-                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1 p-1">
-                            <img src="images/cat1.webp" width="100%" alt="">
-                            <center>Maintenance Service Parts</center>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                            <img src="images/prod8.webp" width="100%" alt="">
-                            <center>Air Conditioning</center>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                            <img src="images/prod8.webp" width="100%" alt="">
-                            <center>Air Conditioning</center>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                            <img src="images/prod9.png" width="100%" alt="">
-                            <center>Air Conditioning</center>
-                        </div>
-                    </div>
-
-
-                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                        <div class="card-shadow w-100 h-100 bg-white cata-box p-1">
-                            <img src="images/cat4.webp" width="100%" alt="">
-                            <center>Air Conditioning</center>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                        <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                            <img src="images/cat1.webp" width="100%" alt="">
-                            <center>Air Conditioning</center>
-                        </div>
-                    </div>
-                </div>
-                <div class="collapse w-100" id="collapseExample">
-                    <div class="row  w-110 ">
-                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                                <img src="images/cat1.webp" width="100%" alt="">
-                                <center>Air Conditioning</center>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                                <img src="images/cat4.webp" width="100%" alt="">
-                                <center>Air Conditioning</center>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                                <img src="images/prod8.webp" width="100%" alt="">
-                                <center>Air Conditioning</center>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                                <img src="images/prod9.png" width="100%" alt="">
-                                <center>Air Conditioning</center>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                                <img src="images/cat4.webp" width="100%" alt="">
-                                <center>Air Conditioning</center>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-3 col-md-2  p-1 d-flex align-items-center justify-content-center">
-                            <div class=" card-shadow w-100 h-100 bg-white cata-box p-1">
-                                <img src="images/cat1.webp" width="100%" alt="">
-                                <center>Air Conditioning</center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-------------------------------------------------------------SEARCH BY CATEGORY ENDS-------------------------------------------------------------------- -->
-
-
-        <div class="container drop-shadow p-3  bg-white">
-            <div class="row w-100">
-                <div class="col-2 d-flex align-items-center">
-                    <img src="images/ProParts.png" width="125px" alt="">
-                    <div>
-
-                        <h1>ProParts</h1>
-                        <h6>"Driving Perfection"</h6>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row w-100 ">
-                <div class="col-12 col-md-6 ps-5 d-flex  order-last order-md-first ">
-                    <div class=" w-100">
-                        <h2>About us</h2>
-                        <p style="text-align: justify; line-height: 30px;">
-                            "Pro Parts: Ignite Your Drive with Precision Performance.
-                            Discover a vast selection of top-tier automobile auto parts to elevate your ride.
-                            We take pride in offering expertly engineered components for all makes and models,
-                            delivering uncompromising quality and reliability.
-                            Your destination for auto parts excellence awaits."
-                            Discover a vast selection of top-tier automobile auto parts to elevate your ride.
-                            We take pride in offering expertly engineered components for all makes and models,
-                            delivering uncompromising quality and reliability.
-                            Your destination for auto parts excellence awaits."
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6   ps-4 d-flex justify-content-center order-first order-md-last ">
-                    <img src="images/Big_logo_white.png" alt="" width="60%">
-                </div>
-            </div>
-        </div>
-
-    </main>
-    <%- include('../partials/footer'); %>
+                        </main>
+                        <%- include('../partials/footer'); %>
 
 </body>
 

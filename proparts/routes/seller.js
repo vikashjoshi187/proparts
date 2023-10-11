@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 router.use(express.static('public'));
@@ -24,4 +24,4 @@ router.get('/sellerorder', (req, res) => {
 });
 
 // Add more routes as needed
-module.exports = router;
+export default router;
