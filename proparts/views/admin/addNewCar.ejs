@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Add New Car</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        // Establish a WebSocket connection
+        const socket = io();
+    
+        // Listen for the "newData" event
+        socket.on('newData', (data) => {
+          // Show an alert or update the page with the new data
+          alert('New data added: ' + JSON.stringify(data));
+        });
+      </script>
+
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/adminnav'); %>
+    </header>
+    <main>
+    <div class="container drop-shadow bg-white p-4 w-80">
+        <div class=" row  ">
+            <h1>Add New Car</h1>
+        </div>
+        <form action="/admin/addcar" method="post">
+            <div class="row">
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="CarName">Car Name</label>
+                    <input class="form-control" type="text" name="carname" value="" placeholder="Enter Car Name">
+                </div>
+
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Car Name">Engine Capacity</label>
+                    <input class="form-control" type="number" name="engiencapacity" value=""
+                        placeholder="Enter Car Name">
+                </div>
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="Car Name">Model</label>
+                    <input class="form-control" type="text" name="carmodel" value="" placeholder="Enter Car Model">
+                </div>
+                <div class="col-12 col-margin mb-3">
+                    <div class="row ">
+                        <div class="col-12 offset-lg-1   col-md-6 col-lg-2 ">
+                            <select class="form-control mt-2" name="maker">
+                                <option value="option-1">Select Brand</option>
+                                
+                                <% if(Brands){  for (let i = 0; i < Brands.length; i++) { %>
+                                    <option value="<%= Brands[i].brandName %>"><%=  Brands[i].brandName%></option>
+                                  <% }} %>
+                            </select>
+                        </div>
+
+
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2" name="startYear">
+                                <option value="option-1">Start Year</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2" name="endYear">
+                                <option value="option-1">End Year</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2" name="modification">
+                                <option value="option-1">Select </option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  col-md-6 col-lg-2">
+                            <select class="form-control mt-2" name="type">
+                                <option value="option-1">Select Type</option>
+                                <option value="option-2">option-2</option>
+                                <option value="option-3">option-3</option>
+                                <option value="option-4">option-4</option>
+                                <option value="option-5">option-5</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-grid gap-2" id="main-search-btn">
+                    <input type="submit" name="" id="" value="Add Car" class="btn text-white">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    
+
+
+
+
+
+    <div class="container drop-shadow bg-white p-4 w-80">
+        <div class=" row  ">
+            <h1>Add New Model</h1>
+        </div>
+        <form action="/admin/addmodel" method="post">
+            <div class="row">
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="ModelName">Model Name</label>
+                    <input class="form-control" type="text" name="modelName" value="" placeholder="Enter Model Name">
+                </div>
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="ModelName">Select Brand</label>
+                    <select class="form-control mt-2" name="brandId">
+
+                        
+                         <% if(Brands){  for (let i = 0; i < Brands.length; i++) { %>
+                            <option value="<%= Brands[i]._id %>"><%=  Brands[i].brandName%></option>
+                          <% }} %>
+ 
+                    </select>
+                   
+                </div>
+                <div class="col-12   col-margin">
+                    <label for="CarName">&nbsp;</label>
+                    <input class="form-control bg-danger text-white" type="submit"  value="Add Model" placeholder="Add Model">
+                </div>
+               
+        </form>
+    </div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    </main>
+    <div class="container drop-shadow bg-white p-4 w-80">
+        <div class=" row  ">
+            <h1>Add New Brand</h1>
+        </div>
+        <form action="/admin/addbrand" method="post" autocomplete="off">
+            <div class="row">
+                
+                <% if(duplicateBrand=="This Brand  already exsist !!!"){%>
+                    <div class="col-12 ">
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                <%=  duplicateBrand %>
+                            </div>
+                          </div>
+                        </div>
+                          <% } else if (duplicateBrand=="Brand Added Sucessfully"){ %>
+                            <div class="col-12 ">
+                                <div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                    <div>
+                                        <%=  duplicateBrand %>
+                                    </div>
+                                  </div>
+                                </div>
+                                <% }%>
+                <div class="col-12 col-md-6  col-margin">
+                    <label for="brandname">Brand Name</label>
+                    <input class="form-control" type="text" name="brandName" value="" placeholder="Enter Brand Name">
+                 </div>
+               
+                 <div class="col-12 col-md-6  col-margin">
+                    <label for="CarName">&nbsp;</label>
+                    <input class="form-control bg-danger text-white" required type="submit"  value="Add Brand" placeholder="Add Brand">
+                </div>
+
+             
+        </form>
+    </div>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

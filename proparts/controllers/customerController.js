@@ -2,6 +2,7 @@ import { user } from '../models/user.js';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
+import product from "../models/productmodel.js";
 
 
 export const SECRET_KEY = crypto.randomBytes(32).toString('hex');
@@ -24,7 +25,7 @@ export const register = async (req, res) => {
                 username: username,
                 email: email,
                 password: hashpassword,
-                role:"customer"
+                role: "customer"
             });
             await result.save();
             console.log("2", result)
@@ -35,13 +36,14 @@ export const register = async (req, res) => {
             }
             token = jwt.sign(payload, SECRET_KEY, expireTime);
             res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge });
+            res.cookie('user', result, { httpOnly: true, maxAge: maxAge });
             if (!token) {
                 res.json({ message: "Error Occured while dealing with Token" });
             }
             console.log("3", token);
 
 
-            res.render("customer/index", { msg: "",user:result});
+            res.render("customer/index", { msg: "", user: result });
         }
     }
     catch (err) {
@@ -63,11 +65,11 @@ export const sellerregister = async (req, res) => {
                 username: username,
                 email: email,
                 password: hashpassword,
-                phone:phone,
-                gst_number:gst_number,
-                upi_id:upi_id,
-                pan_number:pan_number,
-                role:"seller"
+                phone: phone,
+                gst_number: gst_number,
+                upi_id: upi_id,
+                pan_number: pan_number,
+                role: "seller"
             });
             await result.save();
             console.log("2", result)
@@ -78,13 +80,15 @@ export const sellerregister = async (req, res) => {
             }
             token = jwt.sign(payload, SECRET_KEY, expireTime);
             res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge });
+            res.cookie('user', result, { httpOnly: true, maxAge: maxAge });
+
             if (!token) {
                 res.json({ message: "Error Occured while dealing with Token" });
             }
             console.log("3", token);
 
 
-            res.render("customer/index", { msg: "",user:result });
+            res.render("customer/index", { msg: "", user: result });
         }
     }
     catch (err) {
@@ -104,20 +108,21 @@ export const login = async (req, res) => {
             expiresIn: '1d'
         }
         if (!existinguser) {
-            res.render('signin', { msg: "user not found" });
+            res.render('customer/signin', { msg: "user not found" });
         } else {
             const matchpassword = await bcrypt.compare(password, existinguser.password);
             if (!matchpassword) {
                 console.log("passNotMatch");
-                res.render("signin", { msg: "Password Not Match" });
+                res.render("customer/signin", { msg: "Password Not Match" });
             } else {
                 token = jwt.sign(payload, SECRET_KEY, expireTime);
                 res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge });
+                res.cookie('user', existinguser, { httpOnly: true, maxAge: maxAge });
                 if (!token) {
                     response.json({ message: "Error Occured while dealing with Token" });
                 }
                 console.log("token", token);
-                res.render("customer/index",{msg:"",user:existinguser});
+                res.render("customer/index", { msg: "", user: existinguser });
             }
         }
     }
@@ -129,14 +134,15 @@ export const login = async (req, res) => {
 export const authenticateJWT = (request, response, next) => {
     console.log("authenticateJWT : ");
     const token = request.cookies.jwt;
+    const user = request.cookies.user;
     if (!token) {
-        response.json({ message: "Error Occured while dealing with Token inside authenticateJWT" });
+        response.render("customer/index", { user: "" });
+
     }
     jwt.verify(token, SECRET_KEY, (err, payload) => {
-        if (err)
-            response.json({ message: "Error Occured while dealing with Token during verify" });
-        request.payload = payload;
-        next();
+        // if (err)
+        //     response.json({ message: "Error Occured while dealing with Token during verify" });
+        // response.render("customer/index", { user: user });
     });
 }
 
@@ -145,6 +151,17 @@ export const authorizeUser = (request, response, next) => {
     next();
 }
 
+export const customerproduct = async (req, res) => {
+    // const item = await 
+    console.log("customer page");
+    try {
+        const result = await product.find();
+        console.log(result);
+        res.render("customer/product", { productrecord: result });
+    } catch (error) {
+        console.log("Error occures " + error);
+    }
+}
 
 
 

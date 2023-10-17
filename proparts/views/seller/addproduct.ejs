@@ -39,22 +39,24 @@
                 <h1>Add New Product</h1>
             </div>
 
+        <form  action="/seller/addproduct" method="post" enctype="multipart/form-data">
+
             <div class="row">
                 <div class="col-12 col-md-6  col-margin">
                     <label for="product name">Product Name</label>
-                    <input class="form-control" type="text" name="product name" value=""
+                    <input class="form-control" type="text" name="product_name" value=""
                         placeholder="Enter Product Name">
                 </div>
 
                 <div class="col-12 col-md-6 col-margin">
                     <label for="product price">Product Price</label>
-                    <input class="form-control" type="number" name="product price" value=""
+                    <input class="form-control" type="number" name="product_price" value=""
                         placeholder="Enter Product Price">
                 </div>
 
                 <div class="col-12 col-md-6  col-margin">
                     <label for="Actual price">Actual Price</label>
-                    <input class="form-control" type="number" name="Actual price" value=""
+                    <input class="form-control" type="number" name="Actual_price" value=""
                         placeholder="Enter Actual Price">
                 </div>
 
@@ -68,7 +70,7 @@
 
                 <div class="col-12 col-md-6  col-margin">
                     <label for="Return Days">Return Days</label>
-                    <input class="form-control" type="number" name="Return Days" value=""
+                    <input class="form-control" type="number" name="Return_Days" value=""
                         placeholder="Enter Return Days">
                 </div>
 
@@ -97,7 +99,7 @@
                 </div>
                 <div class="col-12 col-md-6  col-margin">
                     <label for="Description">Description</label>
-                    <textarea class="form-control" rows="1" cols="" placeholder="Description"></textarea>
+                    <textarea class="form-control" rows="1" name="Description" cols="" placeholder="Description"></textarea>
                 </div>
 
                 <h4>Product Images</h4>
@@ -118,14 +120,22 @@
                 </div>
 
 
-                <div class="d-grid gap-2  mb-2" id="main-search-btn">
+                <!-- <div class="d-grid gap-2  mb-2" id="main-search-btn">
                     <button type="button" name="" id="" class="btn text-white">Upload Images</button>
+                </div> -->
+
+                <div class="col-6 col-lg-3  d-flex justify-content-around w-100  col-margin">
+                    <input type="file" class="form-control" name="image1" id="image1">
+                    <input type="file" class="form-control" name="image2" id="image2">
+                    <input type="file" class="form-control" name="image3" id="image3">
+                    <input type="file" class="form-control" name="image4" id="image4">
                 </div>
+
 
                 <div class="col-12 col-margin mb-3">
                     <div class="row ">
                         <div class="col-12  col-md-6 col-lg-2 ">
-                            <select class="form-control mt-2">
+                            <select class="form-control mt-2" name="car_marker">
                                 <option value="option-1">Select Car Maker</option>
                                 <option value="option-2">option-2</option>
                                 <option value="option-3">option-3</option>
@@ -135,7 +145,7 @@
                         </div>
 
                         <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
+                            <select class="form-control mt-2" name="model_line">
                                 <option value="oprion-1">Select Model Line</option>
                                 <option value="oprion-2">oprion-2</option>
                                 <option value="oprion-3">oprion-3</option>
@@ -145,7 +155,7 @@
                         </div>
 
                         <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
+                            <select class="form-control mt-2" name="car_year">
                                 <option value="option-1">Select Year</option>
                                 <option value="option-2">option-2</option>
                                 <option value="option-3">option-3</option>
@@ -154,8 +164,8 @@
                             </select>
                         </div>
 
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
+                        <div class="col-12  col-md-6 col-lg-2" >
+                            <select class="form-control mt-2" name="car_modification">
                                 <option value="option-1">Select Modifiction</option>
                                 <option value="option-2">option-2</option>
                                 <option value="option-3">option-3</option>
@@ -164,8 +174,8 @@
                             </select>
                         </div>
 
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
+                        <div class="col-12  col-md-6 col-lg-2" >
+                            <select class="form-control mt-2" name="car_type">
                                 <option value="option-1">Select Type</option>
                                 <option value="option-2">option-2</option>
                                 <option value="option-3">option-3</option>
@@ -174,8 +184,8 @@
                             </select>
                         </div>
                         <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2">
-                                <option value="option-1">Select Part Catagory</option>
+                            <select class="form-control mt-2" name="part_category">
+                                <option value="option-1">Select Part Category</option>
                                 <option value="option-2">option-2</option>
                                 <option value="option-3">option-3</option>
                                 <option value="oprion-4">option-4</option>
@@ -186,18 +196,13 @@
                 </div>
 
                 <div class="d-grid gap-2" id="main-search-btn">
-                    <button type="button" name="" id="" class="btn text-white">Add this Product</button>
+                    <button type="submit" name="" id="" class="btn text-white">Add this Product</button>
                 </div>
-
-
-
-
-
 
 
             </div>
 
-
+        </form>
 
 
         </div>
