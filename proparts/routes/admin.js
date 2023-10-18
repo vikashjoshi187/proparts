@@ -1,5 +1,5 @@
 import express from 'express';
-import {addCarController,addBrandController,dispayBrandsController,addModelController} from '../controllers/adminController.js'
+import {addCarController,addBrandController,dispayBrandsController,addModelController,varientsAjaxController,addVarientController} from '../controllers/adminController.js'
 const router = express.Router();
 import { brands } from '../models/brandsSchema.js';
 
@@ -21,14 +21,13 @@ router.get('/analytics', (req, res) => {
 
 router.get('/addNewcar',dispayBrandsController);
 
-
+router.get('/variants', varientsAjaxController);
 
 
 
 
 router.post('/addcar',addCarController)
-
 router.post('/addmodel',addModelController)
 router.post('/addbrand',addBrandController)
-
+router.post('/addvarient',addVarientController)
 export default router;

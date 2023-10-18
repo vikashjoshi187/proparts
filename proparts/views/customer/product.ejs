@@ -34,7 +34,11 @@
 
 
 <body style="background-color: #590202;" >
-    <%- include('../partials/customernav'); %>
+    <% if(user.role=="customer" ){ %>
+        <%- include('../partials/customernav'); %>
+    <% }else{%>
+        <%- include('../partials/navbar'); %>
+    <% } %>
     <main>
 
         <div class="container bg-white drop-shadow p-3 w-80">
@@ -43,17 +47,17 @@
             </div>
 
             <div class="row  bg-opacity-75 p-4 container-fluid">
-                <% productrecord.forEach(function(user){%>
+                <% productrecord.forEach(function(product){%>
                 <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center" >
                     <div class="card m-2 card-shadow" style="width: 18rem;">
                         <div class="w-100 d-flex justify-content-center">
-                            <img src="/uploads/<%= user.image1%>" class="card-img-top w-75" alt="...">
+                            <img src="/uploads/<%= product.image1%>" class="card-img-top w-75" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><%=user.product_name%></h5>
-                            <h6 class="card-title"><del><%=user.product_price%></del> &nbsp; <%=user.Actual_price%></h6>
-                            <p class="card-text"><%=user.Description%></p>
-                            <button href="#" class="btn buyButton btn-danger">Add to Cart</button>
+                            <h5 class="card-title"><%=product.product_name%></h5>
+                            <h6 class="card-title"><del><%=product.product_price%></del> &nbsp; <%=user.Actual_price%></h6>
+                            <p class="card-text"><%=product.Description%></p>
+                            <a href="/addtocart<%=product._id%>"  class="btn buyButton btn-danger">Add to Cart</a>
                         </div>
                     </div>
                 </div>

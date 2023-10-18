@@ -33,13 +33,16 @@
     <script>
         // Establish a WebSocket connection
         const socket = io();
-    
+
         // Listen for the "newData" event
         socket.on('newData', (data) => {
-          // Show an alert or update the page with the new data
-          alert('New data added: ' + JSON.stringify(data));
+            // Show an alert or update the page with the new data
+            alert('New data added: ' + JSON.stringify(data));
         });
-      </script>
+    </script>
+
+
+  
 
 </head>
 
@@ -48,129 +51,116 @@
         <%- include('../partials/adminnav'); %>
     </header>
     <main>
-    <div class="container drop-shadow bg-white p-4 w-80">
-        <div class=" row  ">
-            <h1>Add New Car</h1>
-        </div>
-        <form action="/admin/addcar" method="post">
-            <div class="row">
-                <div class="col-12 col-md-6  col-margin">
-                    <label for="CarName">Car Name</label>
-                    <input class="form-control" type="text" name="carname" value="" placeholder="Enter Car Name">
-                </div>
+        <div class="container drop-shadow bg-white p-4 w-80">
+            <div class=" row  ">
+                <h1>Add New Car</h1>
+            </div>
+            <form action="/admin/addcar" method="post">
+                <div class="row ">
+                     <div class="col-12 col-margin mb-3">
+                        <div class="row ">
 
-                <div class="col-12 col-md-6  col-margin">
-                    <label for="Car Name">Engine Capacity</label>
-                    <input class="form-control" type="number" name="engiencapacity" value=""
-                        placeholder="Enter Car Name">
-                </div>
-                <div class="col-12 col-md-6  col-margin">
-                    <label for="Car Name">Model</label>
-                    <input class="form-control" type="text" name="carmodel" value="" placeholder="Enter Car Model">
-                </div>
-                <div class="col-12 col-margin mb-3">
-                    <div class="row ">
-                        <div class="col-12 offset-lg-1   col-md-6 col-lg-2 ">
-                            <select class="form-control mt-2" name="maker">
-                                <option value="option-1">Select Brand</option>
-                                
-                                <% if(Brands){  for (let i = 0; i < Brands.length; i++) { %>
-                                    <option value="<%= Brands[i].brandName %>"><%=  Brands[i].brandName%></option>
-                                  <% }} %>
-                            </select>
+                            <!-- Error In Adding Car!! -->
+                            <% if(carAddedmsg=="This Car already exsist !!" ){%>
+                                <div class="col-12 ">
+                                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                            aria-label="Danger:">
+                                            <use xlink:href="#exclamation-triangle-fill" />
+                                        </svg>
+                                        <div>
+                                            <%= carAddedmsg %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } else if (carAddedmsg=="Car Added Sucessfully !!" ){ %>
+                                    <div class="col-12 ">
+                                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                                aria-label="Danger:">
+                                                <use xlink:href="#exclamation-triangle-fill" />
+                                            </svg>
+                                            <div>
+                                                <%= carAddedmsg %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+
+
+                            
+                           <div class="col-12  col-md-6 col-lg-3  d-flex align-items-center">
+                             <input type="text" max="2023-12-31" class="form-control" name="carName" placeholder="Enter Car Name" value="">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 d-flex align-items-center ">
+                                <select class="form-control mt-2" name="brandId" id="Brands"  >
+                                    <option value="option-1">Select Brands</option>
+                                    <%  if(Brands){ for (let i=0; i < Brands.length; i++) { %>
+                                        <option value="<%= Brands[i]._id %>">
+                                            <%= Brands[i].brandName%>
+                                        </option>
+                                        <% }} %>
+                                </select>
+                            </div>
+                            <div class="col-12  col-md-6 col-lg-3 d-flex align-items-center">
+                                <select class="form-control mt-2" name="varientName" id="varientName">
+                                    <option value="option-1">Select Varient </option>
+                                    <%if(Varients){ 
+                                         for (let i=0; i < Varients.length; i++) {
+                                          if(Brands._id==Varients.brandId){ %>
+                                        <option value="<%= Brands[i]._id %>">
+                                            <%= Varients[i].varientName %>
+                                        </option>
+                                    <%} }} else{ %><option value="NO VARIENTS">NO VARIENTS</option><%}%>
+
+                                </select>
+                            </div>
+
+
+                            <script>
+                                document.getElementById('Brands').addEventListener('change', function() {
+                                  const selectedBrand = this.value;
+                                  const carVariantSelect = document.getElementById('varientName');
+                              
+                                  // Send an AJAX request to the server to get variants for the selected brand
+                                  fetch(`/admin/variants?brand=${selectedBrand}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                    //   console.log(data);
+                                      carVariantSelect.innerHTML = '';
+                                      // Add new options
+                                      data.forEach(variant => {
+                                        const option = document.createElement('option');
+                                        option.value = variant.varientName;
+                                        console.log(variant.varientName);
+                                        option.textContent = variant.varientName;
+                                        carVariantSelect.appendChild(option);
+                                      });
+                                    });
+                                console.log(selectedBrand);
+                                });
+                              </script>
+
+
+
+
+
+
+
+                       
+
+                            <div class="col-12  col-md-6 col-lg-3 d-flex align-items-center">
+                                <input type="date" max="2023-12-31" class="form-control" name="startYear" value="">
+                            </div>
                         </div>
-
-
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2" name="startYear">
-                                <option value="option-1">Start Year</option>
-                                <option value="option-2">option-2</option>
-                                <option value="option-3">option-3</option>
-                                <option value="option-4">option-4</option>
-                                <option value="option-5">option-5</option>
-                            </select>
-                        </div>
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2" name="endYear">
-                                <option value="option-1">End Year</option>
-                                <option value="option-2">option-2</option>
-                                <option value="option-3">option-3</option>
-                                <option value="option-4">option-4</option>
-                                <option value="option-5">option-5</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2" name="modification">
-                                <option value="option-1">Select </option>
-                                <option value="option-2">option-2</option>
-                                <option value="option-3">option-3</option>
-                                <option value="option-4">option-4</option>
-                                <option value="option-5">option-5</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12  col-md-6 col-lg-2">
-                            <select class="form-control mt-2" name="type">
-                                <option value="option-1">Select Type</option>
-                                <option value="option-2">option-2</option>
-                                <option value="option-3">option-3</option>
-                                <option value="option-4">option-4</option>
-                                <option value="option-5">option-5</option>
-
-                            </select>
-                        </div>
-
+                    </div>
+                    <div class="d-grid gap-2 ">
+                        <input  c type="submit" name="" id="" value="Add Car" class="btn text-white w-100  btn-danger">
                     </div>
                 </div>
-                <div class="d-grid gap-2" id="main-search-btn">
-                    <input type="submit" name="" id="" value="Add Car" class="btn text-white">
-                </div>
-            </div>
-        </form>
-    </div>
-
-
-    
-
-
-
-
-
-    <div class="container drop-shadow bg-white p-4 w-80">
-        <div class=" row  ">
-            <h1>Add New Model</h1>
+            </form>
         </div>
-        <form action="/admin/addmodel" method="post">
-            <div class="row">
-                <div class="col-12 col-md-6  col-margin">
-                    <label for="ModelName">Model Name</label>
-                    <input class="form-control" type="text" name="modelName" value="" placeholder="Enter Model Name">
-                </div>
-                <div class="col-12 col-md-6  col-margin">
-                    <label for="ModelName">Select Brand</label>
-                    <select class="form-control mt-2" name="brandId">
-
-                        
-                         <% if(Brands){  for (let i = 0; i < Brands.length; i++) { %>
-                            <option value="<%= Brands[i]._id %>"><%=  Brands[i].brandName%></option>
-                          <% }} %>
- 
-                    </select>
-                   
-                </div>
-                <div class="col-12   col-margin">
-                    <label for="CarName">&nbsp;</label>
-                    <input class="form-control bg-danger text-white" type="submit"  value="Add Model" placeholder="Add Model">
-                </div>
-               
-        </form>
-    </div>
-
-
-
- 
 
 
 
@@ -179,10 +169,84 @@
 
 
 
+        <div class="container drop-shadow bg-white p-4 w-80">
+            <div class=" row  ">
+                <h1>Add New Varient</h1>
+            </div>
+            <form action="/admin/addvarient" method="post">
+                <div class="row">
+
+
+                    <% if(duplicateVarient=="This Varient already exsist !!" ){%>
+                        <div class="col-12 ">
+                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                    aria-label="Danger:">
+                                    <use xlink:href="#exclamation-triangle-fill" />
+                                </svg>
+                                <div>
+                                    <%= duplicateVarient %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else if (duplicateVarient=="Varient Added Sucessfully" ){ %>
+                            <div class="col-12 ">
+                                <div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                        aria-label="Danger:">
+                                        <use xlink:href="#exclamation-triangle-fill" />
+                                    </svg>
+                                    <div>
+                                        <%= duplicateVarient %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }%>
+
+
+                                <div class="col-12 col-md-6  col-margin">
+                                    <label for="ModelName">Varient Name</label>
+                                    <input class="form-control" type="text" name="varientName" value=""
+                                        placeholder="Enter Model Name">
+                                </div>
+                                <div class="col-12 col-md-6  col-margin">
+                                    <label for="varientName">Select Brand</label>
+                                    <select class="form-control mt-2" name="brandId">
+
+                                        <option value="">Select Brand</option>
+                                        <% if(Brands){ for (let i=0; i < Brands.length; i++) { %>
+                                            <option value="<%= Brands[i]._id %>">
+                                                <%= Brands[i].brandName%>
+                                            </option>
+                                            <% }} %>
+
+                                    </select>
+
+                                </div>
+                                <div class="col-12   col-margin">
+                                    <label for="CarName">&nbsp;</label>
+                                    <input class="form-control bg-danger text-white" type="submit" value="Add Model"
+                                        placeholder="Add Model">
+                                </div>
+
+            </form>
+        </div>
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </main>
     <div class="container drop-shadow bg-white p-4 w-80">
@@ -191,37 +255,44 @@
         </div>
         <form action="/admin/addbrand" method="post" autocomplete="off">
             <div class="row">
-                
-                <% if(duplicateBrand=="This Brand  already exsist !!!"){%>
+
+                <% if(duplicateBrand=="This Brand  already exsist !!!" ){%>
                     <div class="col-12 ">
                         <div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                                <use xlink:href="#exclamation-triangle-fill" />
+                            </svg>
                             <div>
-                                <%=  duplicateBrand %>
+                                <%= duplicateBrand %>
                             </div>
-                          </div>
                         </div>
-                          <% } else if (duplicateBrand=="Brand Added Sucessfully"){ %>
-                            <div class="col-12 ">
-                                <div class="alert alert-success d-flex align-items-center" role="alert">
-                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                                    <div>
-                                        <%=  duplicateBrand %>
-                                    </div>
-                                  </div>
+                    </div>
+                    <% } else if (duplicateBrand=="Brand Added Sucessfully" ){ %>
+                        <div class="col-12 ">
+                            <div class="alert alert-success d-flex align-items-center" role="alert">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                    aria-label="Danger:">
+                                    <use xlink:href="#exclamation-triangle-fill" />
+                                </svg>
+                                <div>
+                                    <%= duplicateBrand %>
                                 </div>
-                                <% }%>
-                <div class="col-12 col-md-6  col-margin">
-                    <label for="brandname">Brand Name</label>
-                    <input class="form-control" type="text" name="brandName" value="" placeholder="Enter Brand Name">
-                 </div>
-               
-                 <div class="col-12 col-md-6  col-margin">
-                    <label for="CarName">&nbsp;</label>
-                    <input class="form-control bg-danger text-white" required type="submit"  value="Add Brand" placeholder="Add Brand">
-                </div>
+                            </div>
+                        </div>
+                        <% }%>
+                            <div class="col-12 col-md-6  col-margin">
+                                <label for="brandname">Brand Name</label>
+                                <input class="form-control" type="text" name="brandName" value=""
+                                    placeholder="Enter Brand Name">
+                            </div>
 
-             
+                            <div class="col-12 col-md-6  col-margin">
+                                <label for="CarName">&nbsp;</label>
+                                <input class="form-control bg-danger text-white" required type="submit"
+                                    value="Add Brand" placeholder="Add Brand">
+                            </div>
+
+
         </form>
     </div>
     <footer>

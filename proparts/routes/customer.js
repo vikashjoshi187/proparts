@@ -1,5 +1,5 @@
 import express from 'express';
-import { register, login, sellerregister, authenticateJWT, authorizeUser,customerproduct} from '../controllers/customerController.js';
+import { register, login, sellerregister, authenticateJWT, authorizeUser,customerproduct,addtocart,cartShow} from '../controllers/customerController.js';
 import jwt from '../controllers/customerController.js';
 
 const router = express.Router();
@@ -16,9 +16,7 @@ router.get('/index',authenticateJWT, (req, res) => {
     res.render('customer/index', { user: "" });
 });
 
-router.get('/cart', (req, res) => {
-  res.render('customer/cart');
-});
+router.get('/cart', cartShow);
 
 // router.get('/product', (req, res) => {
 //   res.render('customer/product');
@@ -43,10 +41,17 @@ router.get('/userorder', (req, res) => {
 router.get('/shippingaddress', (req, res) => {
   res.render('customer/shippingaddress');
 });
+
 router.post('/sellerregister', sellerregister);
+
 router.post('/register', register);
+
 router.post('/login', login);
+
 router.get('/product', customerproduct);
+
+router.get('/addtocart:id',addtocart);
+
 
 router.get('/logout', (req, res) => {
   console.log("logout")
@@ -54,5 +59,6 @@ router.get('/logout', (req, res) => {
   res.cookie('user', '', { httpOnly: true, maxAge: 1 });
   res.render('customer/signin', { msg: '' });
 });
+
 export default router;
 

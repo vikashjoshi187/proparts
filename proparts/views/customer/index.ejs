@@ -32,7 +32,12 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-
+<style>
+            #searchimage {
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+        }
+</style>
 </head>
 
 <body style="background-color: #590202; height: 400vh;">
@@ -62,7 +67,7 @@
 
                                     <div
                                         class=" order-xs-first col-12 col-md-6 d-flex justify-content-center align-items-center order-first order-md-last">
-                                        <img src="images/ProParts.png" width="75%" alt="">
+                                        <img src="" width="75%" id="searchimage" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -468,5 +473,38 @@
                         <%- include('../partials/footer'); %>
 
 </body>
+<script>
+    // Array of image URLs
+    const imageUrls = [
+        'images/ProParts.png',
+        'images/engine-1.png',
+        'images/engine-2.png',
+        'images/engine-3.png'
+    ];
 
+    let currentIndex = 0;
+    const imageElement = document.getElementById('searchimage');
+
+    function changeImage() {
+        // Fade out the image
+        imageElement.style.opacity = 0;
+
+        setTimeout(() => {
+            // Update the image source with the next image URL
+            imageElement.src = imageUrls[currentIndex];
+
+            // Increment the index and loop back to the beginning if necessary
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+
+            // Fade in the new image
+            imageElement.style.opacity = 1;
+        }, 500); // Delay the image change to match the transition duration (0.5 seconds)
+    }
+
+    // Call the changeImage function every second (1000 milliseconds)
+    setInterval(changeImage, 3000);
+
+    // Initial image load
+    changeImage();
+</script>
 </html>
